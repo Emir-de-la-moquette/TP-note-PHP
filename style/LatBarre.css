@@ -1,11 +1,12 @@
 
+
 .sidebar {
     position: sticky;
     top: 0;
     left: 0;
-    width: 15%;
+    width: 20%;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 1);
     padding: 20px;
     overflow-y: auto;
     z-index: 10;
@@ -30,13 +31,10 @@
 
 .sidebar nav ul li {
     margin: 10px 0;
-    cursor: pointer;
     padding: 10px;
     text-align: center;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 5px;
-    color: white;
-    font-weight: bold;
 }
 
 .sidebar h2 {

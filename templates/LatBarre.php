@@ -3,6 +3,8 @@ require_once '../src/JSONloader.php';
 $quests = getQuestions();
 $names = getNomQuestions();
 
+session_start();
+
 ?>
 
 <head>
@@ -18,10 +20,21 @@ $names = getNomQuestions();
 <nav>
     <ul>
         <?php
-        $int = 0;
-        foreach($names as $quest){
-            $int += 1;
-            echo '<li style="color:rgb(255, 255, 255);"> Question '.$int.' - '.$quest.'</li>';
+        if ($_SESSION['page']=="quiz"){
+            $int = 0;
+            foreach($names as $quest){
+                $int += 1;
+                if ($_SESSION["num_q"]>$int) {
+                    echo '<li style="color:rgb(255, 255, 255);"> Question '.$int.' - '.$quest.'</li>';
+                }
+                elseif ($_SESSION["num_q"]==$int){
+                    echo '<li style="color:rgb(255, 255, 255); font-weight:bold;"> Question '.$int.' - '.$quest.'</li>';
+                }
+                else {
+                    echo '<li style="color:rgb(125, 125, 125);"> Question '.$int.' - '.$quest.'</li>';
+                }
+                
+            }
         }
         ?>
     </ul>
