@@ -13,7 +13,7 @@
         "type": "radio",
         "text": "L'homme est-il enceinte?",
         "choice":["oui", "non", "vero", "conch"],
-        "answers": ["vero"],
+        "answers": ["vero", "oui"],
         "score":2
   
     }
