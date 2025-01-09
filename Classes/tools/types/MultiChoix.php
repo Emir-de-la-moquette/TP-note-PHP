@@ -12,7 +12,7 @@ abstract class MultiChoix extends Question {
     public function __construct(
         string $nom,
         string $texte,
-        string $score,
+        int $score,
         array $choix
     ){
         parent::__construct($nom,$texte,$score);

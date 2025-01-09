@@ -7,12 +7,12 @@ namespace tools;
 abstract class Question{
     protected string $nom;
     protected string $texte;
-    protected string $score;
+    protected int $score;
 
     protected function __construct(
         string $nom,
         string $texte,
-        string $score
+        int $score
     ){
         $this->nom = $nom;
         $this->texte = $texte;
