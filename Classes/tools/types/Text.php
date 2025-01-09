@@ -26,4 +26,7 @@ final class Text extends Question {
                 '<input type="text" name="form[%s]">',
                 $this->nom);
     }
+    public function comparerReponse(string $reponse): int {
+        return $reponse==$this->reponse ? $this->score : 0;
+    }
 }

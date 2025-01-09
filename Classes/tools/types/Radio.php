@@ -32,4 +32,7 @@ abstract class CheckBox extends MultiChoix {
         }
         return $res;
     }
+    public function comparerReponse(string $reponse): int {
+        return $reponse==$this->reponse ? $this->score : 0;
+    }
 }
