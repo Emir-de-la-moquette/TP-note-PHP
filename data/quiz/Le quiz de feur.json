@@ -1,0 +1,20 @@
+[
+    {
+      "nom": "quoi?feur!",
+      "type": "text",
+      "text": "quoi?",
+      "choices": [],
+      "answers": ["feur"],
+      "score":1
+
+    },
+    {
+        "nom": "homme enceinte",
+        "type": "radio",
+        "text": "L'homme est-il enceinte?",
+        "choice":["oui", "non", "vero", "conch"],
+        "answers": ["vero", "oui"],
+        "score":2
+  
+    }
+]
