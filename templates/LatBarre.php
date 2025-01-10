@@ -8,15 +8,21 @@ session_start();
 ?>
 
 <head>
-    <link rel="stylesheet" href="../style/LatBarre.css">
+    <link rel="stylesheet" href="/style/LatBarre.css">
 </head>
 
 <div class="logo">
-    <img src="../style/images/logo.png" alt="Logo">
+    <img src="/style/images/logo.png" alt="Logo">
 </div>
-<div class="nom">
-    <h2>Nom Quiz</h2>
-</div>
+<?php
+
+if ($_SESSION['page']=="quiz"){
+    echo '<div class="nom">
+        <h2>Nom Quiz</h2>
+    </div>';
+}
+?>
+
 <nav>
     <ul>
         <?php
