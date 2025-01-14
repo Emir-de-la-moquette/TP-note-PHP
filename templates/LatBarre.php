@@ -1,5 +1,5 @@
 <?php
-require_once '../src/JSONloader.php';
+require_once __DIR__.'/../src/JSONloader.php';
 $quests = getQuestions();
 $names = getNomQuestions();
 

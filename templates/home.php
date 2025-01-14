@@ -1,9 +1,10 @@
 <?php 
 session_start();
 $_SESSION['num_q']=0;
+$_SESSION['score']=0;
 $_SESSION['page']="home";
 
-$getfiles = array_diff(scandir("../data/quiz/"), array('.', '..'));
+$getfiles = array_diff(scandir(__DIR__."/../data/quiz/"), array('.', '..'));
 $files = array();
 foreach ($getfiles as $file) {
     if (pathinfo($file, PATHINFO_EXTENSION)=="json"){

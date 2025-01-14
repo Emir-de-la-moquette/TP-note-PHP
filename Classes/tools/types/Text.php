@@ -23,7 +23,7 @@ final class Text extends Question {
             '<h2>%s</h2>',
             $this->texte).
             sprintf(
-                '<input type="text" name="form[%s]">',
+                '<input type="text" name="%s">',
                 $this->nom);
     }
     

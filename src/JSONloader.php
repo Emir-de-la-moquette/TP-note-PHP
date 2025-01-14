@@ -1,7 +1,7 @@
 <?php
 
 function getQuestions(){
-    $source = '../data/quiz/Le quiz de feur.json';
+    $source = __DIR__.'/../data/quiz/Le quiz de feur.json';
     $content = file_get_contents($source);
     $questions = json_decode($content, true);
 

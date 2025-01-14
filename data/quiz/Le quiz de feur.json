@@ -1,9 +1,9 @@
 [
     {
       "nom": "quoi?feur!",
-      "type": "text",
+      "type": "checkbox",
       "text": "quoi?",
-      "choices": [],
+      "choices": ["quoi","feur"],
       "answers": ["feur"],
       "score":1
 
@@ -12,7 +12,7 @@
         "nom": "homme enceinte",
         "type": "radio",
         "text": "L'homme est-il enceinte?",
-        "choice":["oui", "non", "vero", "conch"],
+        "choices":["oui", "non", "vero", "conch"],
         "answers": ["vero", "oui"],
         "score":2
   

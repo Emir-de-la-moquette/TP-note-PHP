@@ -7,6 +7,6 @@ class AutoLoader{
 
     static function autoload($fqcn){
         $path = str_replace('\\', '/', $fqcn).'.php';
-        require 'Classes/'.$path;
+        require __DIR__.'/../Classes/'.$path;
     }
 }
