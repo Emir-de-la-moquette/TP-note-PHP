@@ -23,7 +23,7 @@ class Radio extends MultiChoix {
     public function render(): string {
         $res = "<h2>$this->texte</h2><br>";
         foreach ($this->choix as $c) {
-            $res .= "<input type='radio' id='$c' name='form[$this->nom]' value='$c'><label for='$c'>$c</label>";
+            $res .= "<input type='radio' id='$c' name='$this->nom' value='$c'><label for='$c'>$c</label>";
         }
         return $res."</br>";
     }

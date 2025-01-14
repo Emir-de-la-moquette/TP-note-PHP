@@ -19,7 +19,7 @@ final class Text extends Question {
     }
 
     public function render(): string {
-        return "<h2>$this->texte</h2><input type='text' name='form[$this->nom]'>";
+        return "<h2>$this->texte</h2><input type='text' name='$this->nom'>";
     }
     
     public function comparerReponse(string $reponse): int {
