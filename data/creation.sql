@@ -25,7 +25,9 @@ CREATE TABLE REALISER (
     idQuiz INT(8),
     date DATE,
     score INT(4),
-    PRIMARY KEY (idUtilisateur, idQuiz, date)
+    PRIMARY KEY (idUtilisateur, idQuiz, date),
+    FOREIGN KEY (idUtilisateur) REFERENCES UTILISATEUR(idUtilisateur),
+    FOREIGN KEY (idQuiz) REFERENCES QUIZ(idQuiz)
 );
 ALTER TABLE REALISER ADD FOREIGN KEY (idUtilisateur) REFERENCES UTILISATEUR(idUtilisateur);
 ALTER TABLE REALISER ADD FOREIGN KEY (idQuiz) REFERENCES QUIZ(idQuiz);
@@ -33,7 +35,9 @@ ALTER TABLE REALISER ADD FOREIGN KEY (idQuiz) REFERENCES QUIZ(idQuiz);
 CREATE TABLE CONTENIR (
     idQuiz INT(8),
     idQuestion INT(8),
-    PRIMARY KEY (idQuiz,idQuestion)
+    PRIMARY KEY (idQuiz,idQuestion),
+    FOREIGN KEY (idQuiz) REFERENCES QUIZ(idQuiz),
+    FOREIGN KEY (idQuestion) REFERENCES QUESTION(idQuestion)
 );
 ALTER TABLE CONTENIR ADD FOREIGN KEY (idQuestion) REFERENCES QUESTION(idQuestion);
 ALTER TABLE CONTENIR ADD FOREIGN KEY (idQuiz) REFERENCES QUIZ(idQuiz);
@@ -41,13 +45,15 @@ ALTER TABLE CONTENIR ADD FOREIGN KEY (idQuiz) REFERENCES QUIZ(idQuiz);
 CREATE TABLE CORRIGER (
     idQuestion INT(8),
     reponse VARCHAR(16),
-    PRIMARY KEY (idQuestion, reponse)
+    PRIMARY KEY (idQuestion, reponse),
+    FOREIGN KEY (idQuestion) REFERENCES QUESTION(idQuestion)
 );
 ALTER TABLE CORRIGER ADD FOREIGN KEY (idQuestion) REFERENCES QUESTION(idQuestion);
 
 CREATE TABLE CHOIX (
     idQuestion INT(8),
     choix VARCHAR(16),
-    PRIMARY KEY (idQuestion, reponse)
+    PRIMARY KEY (idQuestion, choix),
+    FOREIGN KEY (idQuestion) REFERENCES QUESTION(idQuestion)
 );
 ALTER TABLE CHOIX ADD FOREIGN KEY (idQuestion) REFERENCES QUESTION(idQuestion);
