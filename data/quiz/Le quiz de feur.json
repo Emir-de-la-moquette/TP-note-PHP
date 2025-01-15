@@ -16,5 +16,14 @@
         "answers": ["vero", "oui"],
         "score":2
   
+    },
+    {
+        "nom": "chier",
+        "type": "text",
+        "text": "couleur de mon caca",
+        "choices":[],
+        "answers": ["vert"],
+        "score":2
+  
     }
 ]

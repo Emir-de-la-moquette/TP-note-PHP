@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-$pdo = new PDO('sqlite:../data/bd/db.sqlite');
+$pdo = new PDO('sqlite:'.__DIR__.'/../data/bd/db.sqlite');
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 function recupererChoix(string $nomQuestion):array{
