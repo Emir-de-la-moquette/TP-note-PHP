@@ -70,4 +70,18 @@ function chargerNom(int $id):string{
     return $quizBrut["nomQuiz"];
 }
 
+function getAllId():array{
+    global $pdo;
+
+    $requete = "SELECT * FROM QUIZ";
+    $idBrut = $pdo->query($requete);
+    $idPropre = [];
+
+    foreach ($idBrut as $rows) {
+        array_push($idPropre, $rows["idQuiz"]);
+    }
+    
+    return $idPropre;
+}
+
 ?>
