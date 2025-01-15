@@ -19,12 +19,7 @@ final class Text extends Question {
     }
 
     public function render(): string {
-        return sprintf(
-            '<h2>%s</h2>',
-            $this->texte).
-            sprintf(
-                '<input type="text" name="%s">',
-                $this->nom);
+        return "<h2>$this->texte</h2><input type='text' name='$this->nom'>";
     }
     
     public function comparerReponse(string $reponse): int {
