@@ -1,7 +1,7 @@
 <?php 
 declare(strict_types=1);
 require_once __DIR__.'/../src/JSONloader.php';
-require __DIR__.'/../Classes/autoLoader.php';
+require_once __DIR__.'/../Classes/autoLoader.php';
 
 
 session_start();
@@ -11,8 +11,9 @@ if (!isset($_SESSION['num_q']) or $_SESSION['num_q'] == 0) {
 $_SESSION['page']="quiz";
 
 if(!empty($_GET['name'])){
-    $quests = getQuestions();
-    $names = getNomQuestions();
+    $_SESSION['Qname'] = $_GET['name'];
+    $quests = getQuestions($_SESSION['Qname']);
+    $names = getNomQuestions($_SESSION['Qname']);
 }
 
 
@@ -46,6 +47,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         case 'checkbox':
             $questionObj = new CheckBox($currentQuestion['nom'], $currentQuestion['text'], $currentQuestion['score'], $currentQuestion['choices'], $currentQuestion['answers']);
             $score = $questionObj->comparerReponse([$_POST[$currentQuestion['nom']]] ?? []);
+            $nomCorrige = str_replace(' ', '_', $currentQuestion['nom']);
+            $reponses = $_POST[$nomCorrige] ?? [];
+            if (!is_array($reponses)) {
+                $reponses = [$reponses];
+            }
+            $reponsesFinales = array_values($reponses);
+            $score = $questionObj->comparerReponse($reponsesFinales);
             // var_dump($questionObj);
             break;
     }
@@ -70,6 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
     <link rel="stylesheet" href="/style/home.css">
+    <link rel="stylesheet" href="/style/quiz.css">
 </head>
 <body>
     <aside class="sidebar">
@@ -82,8 +91,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <?php 
             $feur = $quests[$_SESSION['num_q']-1];
             // var_dump($feur);
-            echo "question : ".$_SESSION['num_q'];
-            echo "  score : ".$_SESSION['score'];
+            // echo "question : ".$_SESSION['num_q'];
+            // echo "  score : ".$_SESSION['score'];
             switch($feur['type']){
                 case 'text':
                     $question_pour_un_champion = new Text($feur['nom'],$feur['text'],$feur['score'],$feur['answers'][0]);

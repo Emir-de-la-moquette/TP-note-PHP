@@ -1,7 +1,7 @@
 [
     {
       "nom": "quoi?feur!",
-      "type": "checkbox",
+      "type": "radio",
       "text": "quoi?",
       "choices": ["quoi","feur"],
       "answers": ["feur"],
@@ -10,7 +10,7 @@
     },
     {
         "nom": "homme enceinte",
-        "type": "radio",
+        "type": "checkbox",
         "text": "L'homme est-il enceinte?",
         "choices":["oui", "non", "vero", "conch"],
         "answers": ["vero", "oui"],

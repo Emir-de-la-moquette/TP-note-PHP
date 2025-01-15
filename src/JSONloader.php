@@ -1,7 +1,7 @@
 <?php
 
-function getQuestions(){
-    $source = __DIR__.'/../data/quiz/Le quiz de feur.json';
+function getQuestions($nom){
+    $source = __DIR__.'/../data/quiz/'.$nom;
     $content = file_get_contents($source);
     $questions = json_decode($content, true);
 
@@ -11,8 +11,8 @@ function getQuestions(){
     return $questions;
 }
 
-function getNomQuestions(){
-    $questions = getQuestions();
+function getNomQuestions($nom){
+    $questions = getQuestions($nom);
     $names=[];
     foreach($questions as $quest){
         if(!in_array($quest['nom'], $names)){

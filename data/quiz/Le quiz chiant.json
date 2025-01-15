@@ -1,0 +1,82 @@
+[
+    {
+        "nom": "plus_ou_moins",
+        "type": "radio",
+        "text": "Lequel est le plus grand?",
+        "choices": ["2", "3", "1", "0"],
+        "answers": ["3"],
+        "score": 1
+    },
+    {
+        "nom": "animaux_domestiques",
+        "type": "checkbox",
+        "text": "Quels animaux sont généralement domestiques?",
+        "choices": ["chien", "chat", "tigre", "lion"],
+        "answers": ["chien", "chat"],
+        "score": 2
+    },
+    {
+        "nom": "capital_france",
+        "type": "radio",
+        "text": "Quelle est la capitale de la France?",
+        "choices": ["Marseille", "Lyon", "Paris", "Bordeaux"],
+        "answers": ["Paris"],
+        "score": 1
+    },
+    {
+        "nom": "couleurs_primaire",
+        "type": "checkbox",
+        "text": "Quelles sont les couleurs primaires?",
+        "choices": ["rouge", "vert", "bleu", "jaune"],
+        "answers": ["rouge", "bleu", "jaune"],
+        "score": 3
+    },
+    {
+        "nom": "formule_eau",
+        "type": "radio",
+        "text": "Quelle est la formule chimique de l'eau?",
+        "choices": ["H2O", "CO2", "O2", "H2"],
+        "answers": ["H2O"],
+        "score": 1
+    },
+    {
+        "nom": "planetes",
+        "type": "checkbox",
+        "text": "Quelles planètes font partie du système solaire?",
+        "choices": ["Terre", "Mars", "Pluton", "Aldebaran"],
+        "answers": ["Terre", "Mars", "Pluton"],
+        "score": 2
+    },
+    {
+        "nom": "annee_independance",
+        "type": "radio",
+        "text": "En quelle année les États-Unis ont-ils déclaré leur indépendance?",
+        "choices": ["1776", "1492", "1789", "1812"],
+        "answers": ["1776"],
+        "score": 1
+    },
+    {
+        "nom": "sports_olympiques",
+        "type": "checkbox",
+        "text": "Quels sports sont présents aux Jeux Olympiques?",
+        "choices": ["football", "natation", "cricket", "karaté"],
+        "answers": ["football", "natation", "karaté"],
+        "score": 2
+    },
+    {
+        "nom": "jour_premier",
+        "type": "radio",
+        "text": "Quel est le premier jour de la semaine?",
+        "choices": ["dimanche", "lundi", "mardi", "samedi"],
+        "answers": ["lundi"],
+        "score": 1
+    },
+    {
+        "nom": "pyramides",
+        "type": "checkbox",
+        "text": "Dans quels pays trouve-t-on des pyramides célèbres?",
+        "choices": ["Égypte", "Mexique", "Italie", "Chine"],
+        "answers": ["Égypte", "Mexique"],
+        "score": 2
+    }
+]
