@@ -1,7 +1,9 @@
 <?php
-require_once '../src/JSONloader.php';
-$quests = getQuestions();
-$names = getNomQuestions();
+require_once __DIR__.'/../src/JSONloader.php';
+if(!empty($_GET['name'])){
+    $quests = getQuestions($_GET['name']);
+    $names = getNomQuestions($_GET['name']);
+}
 
 session_start();
 
@@ -20,6 +22,11 @@ if ($_SESSION['page']=="quiz"){
     echo '<div class="nom">
         <h2>Nom Quiz</h2>
     </div>';
+    echo '<a href=/templates/home.php>
+    <div class="home">
+    <img src="/style/images/maison.png" alt="home">
+    </div>
+    </a>';
 }
 ?>
 

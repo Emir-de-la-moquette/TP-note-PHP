@@ -1,16 +1,16 @@
 [
     {
       "nom": "quoi?feur!",
-      "type": "text",
+      "type": "radio",
       "text": "quoi?",
-      "choices": [],
+      "choices": ["quoi","feur"],
       "answers": ["feur"],
       "score":1
 
     },
     {
         "nom": "homme enceinte",
-        "type": "radio",
+        "type": "checkbox",
         "text": "L'homme est-il enceinte?",
         "choices":["oui", "non", "vero", "conch"],
         "answers": ["vero", "oui"],

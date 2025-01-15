@@ -1,0 +1,27 @@
+.result {
+    margin: 20px 0;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.actions {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.actions .button {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    text-decoration: none;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.actions .button:hover {
+    background-color: #0056b3;
+}
