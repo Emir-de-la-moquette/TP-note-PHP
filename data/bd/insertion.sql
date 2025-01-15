@@ -8,3 +8,10 @@ insert into CONTENIR(idQuiz, nomQuestion) values (1,"FURRY"),
                                                  (1,"Feur"),
                                                  (2,"Feur");
 
+insert into CORRIGER(nomQuestion, reponse) values ("FURRY", "UWU"),
+                                                  ("Feur", "feur"),
+                                                  ("Feur", "coubeh");
+
+insert into CHOIX(nomQuestion, choix) values ("FURRY", "un simple emoji"),
+                                             ("Feur", "hein ?"),
+                                             ("Feur", "oui ?");
