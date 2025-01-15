@@ -59,6 +59,22 @@ function chargerQuestion(int $idQuiz):array{
     return $quizPropre;
 }
 
+function chargerNomQuestion(int $idQuiz):array{
+    global $pdo;
+
+    $requete = "SELECT * FROM QUIZ NATURAL JOIN CONTENIR NATURAL JOIN QUESTION WHERE idQuiz=?";
+    $stmt = $pdo->prepare($requete);
+    $stmt->execute([$idQuiz]);
+
+    $nomBrut = $stmt->fetchAll();
+
+    $nomPropre = [];
+    for ($i=0; $i < count($nomBrut); $i++) {
+        array_push($nomPropre,$nomBrut[$i]['nomQuestion']);
+    }
+    return $nomPropre;
+}
+
 function chargerNom(int $id):string{
     global $pdo;
 

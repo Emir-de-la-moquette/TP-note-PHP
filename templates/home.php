@@ -1,4 +1,6 @@
-<?php 
+<?php
+
+require_once __DIR__.'/../src/bd.php';
 session_start();
 $_SESSION['num_q']=0;
 $_SESSION['score']=(float)0;
@@ -32,9 +34,12 @@ foreach ($getfiles as $file) {
         <h1>Bienvenue sur Quiz Time !</h1>
         <h2>choississez un quiz :</h2>
         <div class="fichiers">
-            <?php 
+            <?php
             foreach($files as $quiz){
                 echo '<a href="./pageQuiz.php/?name='.$quiz.'.json"><p>'.$quiz.' - composé de '.count(getQuestions($quiz.'.json')).' questions </p></a>';
+            }
+            foreach(getAllId() as $id){
+                echo '<a href="./pageQuizBD.php/?id='.$quiz.'.json"><p>'.chargerNom($id).' - composé de '.count(chargerQuestion($id)).' questions </p></a>';
             }
             ?>
         </div>
