@@ -100,4 +100,31 @@ function getAllId():array{
     return $idPropre;
 }
 
+function insererUtilisateur(string $idUtilisateur, string $nomUtilisateur, string $motDePasse): void{
+    global $pdo;
+
+    $hash=hash('sha256',$motDePasse);
+
+    $stmt = $pdo->prepare("INSERT INTO UTILISATEUR(idUtilisateur, nomUtilisateur, motDePasse) VALUES (?, ?, ?)");
+    $stmt->execute(params: [$idUtilisateur, $nomUtilisateur, $hash]);
+}
+
+function verificationUtilisateur(string $idUtilisateur, string $motDePasse): bool {
+    global $pdo;
+
+    $requete = "SELECT * FROM UTILISATEUR WHERE idUtilisateur=?";
+    $stmt = $pdo->prepare($requete);
+    $stmt->execute([$idUtilisateur]);
+
+    $quizBrut = $stmt->fetch();
+    return $quizBrut["motDePasse"]==hash('sha256',$motDePasse);
+}
+
+function ajouterResultat(string $idUtilisateur, int $idQuiz, int $score): void {
+    global $pdo;
+
+    $stmt = $pdo->prepare("INSERT INTO REALISER(idUtilisateur, idQuiz, date, score) VALUES (?, ?, ?, ?)");
+    $stmt->execute(params: [$idUtilisateur, $idQuiz, date('Y-m-d H:i:s'),$score]);
+}
+
 ?>
