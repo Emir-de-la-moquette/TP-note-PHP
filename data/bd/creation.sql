@@ -12,12 +12,11 @@ CREATE TABLE QUIZ (
 );
 
 CREATE TABLE QUESTION (
-    idQuestion INT(8),
-    nom VARCHAR(42),
+    nomQuestion VARCHAR(42),
     texte VARCHAR(42),
     score INT(4),
     types VARCHAR(42),
-    PRIMARY KEY (idQuestion)
+    PRIMARY KEY (nomQuestion)
 );
 
 CREATE TABLE REALISER (
@@ -32,22 +31,22 @@ CREATE TABLE REALISER (
 
 CREATE TABLE CONTENIR (
     idQuiz INT(8),
-    idQuestion INT(8),
-    PRIMARY KEY (idQuiz,idQuestion),
+    nomQuestion INT(8),
+    PRIMARY KEY (idQuiz,nomQuestion),
     FOREIGN KEY (idQuiz) REFERENCES QUIZ(idQuiz),
-    FOREIGN KEY (idQuestion) REFERENCES QUESTION(idQuestion)
+    FOREIGN KEY (nomQuestion) REFERENCES QUESTION(nomQuestion)
 );
 
 CREATE TABLE CORRIGER (
-    idQuestion INT(8),
+    nomQuestion INT(8),
     reponse VARCHAR(16),
-    PRIMARY KEY (idQuestion, reponse),
-    FOREIGN KEY (idQuestion) REFERENCES QUESTION(idQuestion)
+    PRIMARY KEY (nomQuestion, reponse),
+    FOREIGN KEY (nomQuestion) REFERENCES QUESTION(nomQuestion)
 );
 
 CREATE TABLE CHOIX (
-    idQuestion INT(8),
+    nomQuestion INT(8),
     choix VARCHAR(16),
-    PRIMARY KEY (idQuestion, choix),
-    FOREIGN KEY (idQuestion) REFERENCES QUESTION(idQuestion)
+    PRIMARY KEY (nomQuestion, choix),
+    FOREIGN KEY (nomQuestion) REFERENCES QUESTION(nomQuestion)
 );
