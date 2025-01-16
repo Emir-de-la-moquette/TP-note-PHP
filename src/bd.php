@@ -70,4 +70,5 @@ function chargerNom(int $id):string{
     return $quizBrut["nomQuiz"];
 }
 
+
 ?>
