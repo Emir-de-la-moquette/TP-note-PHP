@@ -32,7 +32,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // echo PHP_EOL;
     // var_dump($currentQuestion);
     // echo PHP_EOL;
-    var_dump($currentQuestion);
 
     switch ($currentQuestion['type']) {
         case 'text':
