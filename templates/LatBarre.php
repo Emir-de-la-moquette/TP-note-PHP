@@ -18,9 +18,14 @@ session_start();
 </div>
 <?php
 
+if ($_SESSION['page']=="home" ){
+    if ($_SESSION['loggedin'] == false){echo '<a href="./login.php">se connecter</a>';}
+    else {echo '<a href="../src/logout.php">se déconnecter</a>';}
+}
+
 if ($_SESSION['page']=="quiz"){
     echo '<div class="nom">
-        <h2>Nom Quiz</h2>
+        <h2>'.$_GET['name'].'</h2>
     </div>';
     echo '<a href=/templates/home.php>
     <div class="home">
