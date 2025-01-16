@@ -15,12 +15,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Validation de base
     if ($email && $mdp) {
         try {
-            if (isUtilisateurExistant($email, $mdp)) {
+            if (verificationUtilisateur($email, $mdp)) {
                 echo '<script>showPopup("Cet email est déjà utilisé.", false);</script>';
             } else {
                 // Insérer les données dans la table "users"
                 // function insertAdherent($nom, $prenom, $tel, $mail, $taille, $poids, $dateInscription, $mdp){
-                insertUser($email, $mdp);
+                    insererUtilisateur($email, $mdp);
 
                 $_SESSION['user']=$email;
 

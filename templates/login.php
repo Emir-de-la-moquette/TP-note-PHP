@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'] ?? '';
     try {
         // Vérification des identifiants via la fonction du modèle
-        $user = isUtilisateurExistant($username, $password);
+        $user = verificationUtilisateur($username, $password);
 
         if ($user) {
             // Set session and redirect

@@ -100,13 +100,13 @@ function getAllId():array{
     return $idPropre;
 }
 
-function insererUtilisateur(string $idUtilisateur, string $nomUtilisateur, string $motDePasse): void{
+function insererUtilisateur(string $idUtilisateur, string $motDePasse): void{
     global $pdo;
 
     $hash=hash('sha256',$motDePasse);
 
     $stmt = $pdo->prepare("INSERT INTO UTILISATEUR(idUtilisateur, nomUtilisateur, motDePasse) VALUES (?, ?, ?)");
-    $stmt->execute(params: [$idUtilisateur, $nomUtilisateur, $hash]);
+    $stmt->execute(params: [$idUtilisateur, $idUtilisateur, $hash]);
 }
 
 function verificationUtilisateur(string $idUtilisateur, string $motDePasse): bool {
