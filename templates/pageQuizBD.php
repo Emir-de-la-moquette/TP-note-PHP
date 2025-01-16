@@ -12,6 +12,7 @@ $_SESSION['page']="quiz";
 
 if(!empty($_GET['id'])){
     $_SESSION['Qname'] = $_GET['name'];
+    $_SESSION['idQ'] = $_GET['id'];
     $quests = chargerQuestion(intval($_GET['id']));
     $names = chargerNomQuestion(intval($_GET['id']));
 }
