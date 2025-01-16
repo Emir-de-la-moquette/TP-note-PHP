@@ -1,6 +1,6 @@
 <?php 
 declare(strict_types=1);
-require_once __DIR__.'/../src/JSONloader.php';
+require_once __DIR__.'/../src/bd.php';
 require_once __DIR__.'/../Classes/autoLoader.php';
 
 
@@ -10,10 +10,10 @@ if (!isset($_SESSION['num_q']) or $_SESSION['num_q'] == 0) {
 }
 $_SESSION['page']="quiz";
 
-if(!empty($_GET['name'])){
+if(!empty($_GET['id'])){
     $_SESSION['Qname'] = $_GET['name'];
-    $quests = getQuestions($_SESSION['Qname']);
-    $names = getNomQuestions($_SESSION['Qname']);
+    $quests = chargerQuestion(intval($_GET['id']));
+    $names = chargerNomQuestion(intval($_GET['id']));
 }
 
 
@@ -83,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
     <aside class="sidebar">
-        <?php include "LatBarre.php"?>
+        <?php include "LatBarreBD.php"?>
     </aside>
 
     <main>
