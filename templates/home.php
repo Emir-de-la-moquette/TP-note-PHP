@@ -39,7 +39,7 @@ foreach ($getfiles as $file) {
                 echo '<a href="./pageQuiz.php/?name='.$quiz.'.json"><p>'.$quiz.' - composé de '.count(getQuestions($quiz.'.json')).' questions </p></a>';
             }
             foreach(getAllId() as $id){
-                echo '<a href="./pageQuizBD.php/?id='.$quiz.'.json"><p>'.chargerNom($id).' - composé de '.count(chargerQuestion($id)).' questions </p></a>';
+                echo '<a href="./pageQuizBD.php/?id='.$id.'"><p>'.chargerNom($id).' - composé de '.count(chargerQuestion($id)).' questions </p></a>';
             }
             ?>
         </div>

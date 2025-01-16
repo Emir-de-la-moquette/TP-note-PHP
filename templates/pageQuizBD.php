@@ -12,8 +12,8 @@ $_SESSION['page']="quiz";
 
 if(!empty($_GET['id'])){
     $_SESSION['Qname'] = $_GET['name'];
-    $quests = chargerQuestion($_GET['id']);
-    $names = chargerNomQuestion($_GET['id']);
+    $quests = chargerQuestion(intval($_GET['id']));
+    $names = chargerNomQuestion(intval($_GET['id']));
 }
 
 
@@ -32,6 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // echo PHP_EOL;
     // var_dump($currentQuestion);
     // echo PHP_EOL;
+    var_dump($currentQuestion);
 
     switch ($currentQuestion['type']) {
         case 'text':
@@ -82,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
     <aside class="sidebar">
-        <?php include "LatBarre.php"?>
+        <?php include "LatBarreBD.php"?>
     </aside>
 
     <main>

@@ -48,13 +48,13 @@ function chargerQuestion(int $idQuiz):array{
     for ($i=0; $i < count($quizBrut); $i++) {
         $choix = recupererChoix($quizBrut[$i]['nomQuestion']);
         $corriger = recupererCorriger($quizBrut[$i]['nomQuestion']);
-        array_push($choix,$corriger);
-        array_push($quizPropre,[['nom'=>$quizBrut[$i]['nomQuestion'],
+        $choix = array_merge($choix,$corriger);
+        array_push($quizPropre,['nom'=>$quizBrut[$i]['nomQuestion'],
                                     'type'=>$quizBrut[$i]['types'],
                                     'text'=>$quizBrut[$i]['texte'],
                                     'choices'=>$choix,
                                     'answers'=>$corriger,
-                                    'score'=>$quizBrut[$i]['score']]]);
+                                    'score'=>$quizBrut[$i]['score']]);
     }
     return $quizPropre;
 }
